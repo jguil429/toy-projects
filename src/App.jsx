@@ -1,7 +1,7 @@
 
 // import ColorPicker from "./ColorPicker/ColorPicker";
 import DigitalClock from "./DigitalClock/DigitalClock";
-// import ToDoList from "./ToDoList/ToDoList";
+import ToDoList from "./ToDoList/ToDoList";
 // import Button from "./Button/Button";
 import Card from "./Card/Card";
 
@@ -18,6 +18,7 @@ function App() {
       <DigitalClock timeZone="America/New_York" />
       <DigitalClock timeZone="Europe/London" />
       <DigitalClock timeZone="Asia/Tokyo" />
+      <ToDoList/>
     </>
   );
 }

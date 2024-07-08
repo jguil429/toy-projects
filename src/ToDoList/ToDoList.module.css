@@ -1,14 +1,28 @@
 .todolist {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    margin-top: 100px;
+    margin: 100px auto;
+    width: 50%;
+    
 }
 
 h1 {
     font-size: 4rem;
 }
 
-button {
+/* button {
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+} */
+
+.addbutton {
+    background-color: hsl(125, 47%, 54%);
     font-size: 1.7rem;
     font-weight: bold;
     padding: 10px 20px;
@@ -19,16 +33,36 @@ button {
     transition: background-color .5s ease;
 }
 
-.addbutton {
-    background-color: hsl(125, 47%, 54%);
+.addbutton:hover {
+    background-color: hsl(125, 47%, 44%);
 }
 
-.addbutton:hover {
+.completebutton{
+    background-color: hsl(125, 47%, 44%);
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+
+.completebutton:hover{
     background-color: hsl(125, 47%, 44%);
 }
 
 .deletebutton {
     background-color: hsl(10, 90%, 50%);
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .5s ease;
 }
 
 .deletebutton:hover {
@@ -37,6 +71,14 @@ button {
 
 .movebutton {
     background-color: hsl(207, 90%, 64%);
+    font-size: 1.7rem;
+    font-weight: bolder;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .5s ease;
 }
 
 .movebutton:hover {
@@ -46,6 +88,7 @@ button {
 input[type="text"] {
     font-size: 1.6rem;
     padding: 10px;
+    margin: 5px;
     border: 2px solid hsla(0, 0%, 80%, .5);
     border-radius: 5px;
     color: hsla(0, 0%, 0%, .5);
@@ -54,6 +97,7 @@ input[type="text"] {
 ol{
     padding: 0;
 }
+
 li {
     font-size: 2rem;
     font-weight: bold;
@@ -70,7 +114,7 @@ li {
     flex: 1;
 }
 
-.deletebutton, .movebutton {
+.deletebutton, .movebutton, .completebutton {
     padding: 8px 12px;
     font-size: 1.4rem;
     margin-left: 10px;

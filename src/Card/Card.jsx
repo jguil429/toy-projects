@@ -13,7 +13,7 @@ function Card(props) {
             <img className={ styles.cardimg } src={ placeHolderImg } alt="placeholder image"></img>
             <h2 className={ styles.cardtitle }>{ toyTitle }</h2>
             <p className={ styles.cardtext }>{ toyDescription }</p>
-            <Button buttonText='View Toy'/>
+            <Button buttonText='Play with toy'/>
         </div>
     );  
 }  

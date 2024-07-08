@@ -24,6 +24,12 @@ function ToDoList() {
         
     }
 
+    function completeTask(index) {
+        const updatedTasks = tasks.filter((_, i) => i !== index);
+        setTasks(updatedTasks);
+        
+    }
+
     function moveTaskUp(index) {
         if (index > 0) {
             const updatedTasks = [...tasks];
@@ -56,15 +62,18 @@ function ToDoList() {
         <ol>
             { tasks.map((task, index) => 
                 <li key={ index }>
-                    <span className={styles.text}>{ task }</span>
+                    <span className={ styles.text }>{ task }</span>
+                    <button className={styles.completebutton} onClick={() => completeTask(index)}>
+                        &#10003;
+                    </button>
                     <button className={styles.deletebutton} onClick={() => deleteTask(index)}>
-                        Delete
+                        &#10007;
                     </button>
                     <button className={styles.movebutton} onClick={() => moveTaskUp(index)}>
-                        Move up
+                       &#8593;
                     </button>
                     <button className={styles.movebutton} onClick={() => moveTaskDown(index)}>
-                        Move down
+                        &#8595;
                     </button>
                 </li>) }
         </ol>
