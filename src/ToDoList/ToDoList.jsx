@@ -4,6 +4,7 @@ import styles from "./ToDoList.module.css";
 function ToDoList() {
 
     const [tasks, setTasks] = useState([]);
+    const [completedTasks, setCompletedTasks] = useState([]);
     const [newTask, setNewTask] = useState("");
 
     function handleInputChange(event) {
@@ -25,8 +26,10 @@ function ToDoList() {
     }
 
     function completeTask(index) {
+        const taskToComplete = tasks[index];
         const updatedTasks = tasks.filter((_, i) => i !== index);
         setTasks(updatedTasks);
+        setCompletedTasks(ct => [...ct, taskToComplete]);
         
     }
 
@@ -51,7 +54,7 @@ function ToDoList() {
     return (<div className={styles.todolist}>
         <h1>To Do List</h1>
         <div>
-            <input
+            <input className={styles.toDoInput}
                 type="text"
                 placeholder='Enter a task...'
                 value={ newTask }
@@ -77,7 +80,22 @@ function ToDoList() {
                     </button>
                 </li>) }
         </ol>
+        <CompletedTasks tasks={completedTasks} />
     </div>)
+}
+
+function CompletedTasks({ tasks }) {
+    return (
+        <div className={styles.completedtasks}>
+            <h2>Completed Tasks</h2>
+            <ol>
+                { tasks.map((task, index) => 
+                    <li key={ index }>
+                        <span className={ styles.text }>{ task }</span>
+                    </li>) }
+            </ol>
+        </div>
+    );
 }
 
 export default ToDoList

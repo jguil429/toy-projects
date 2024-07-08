@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Button from '../Button/Button';
+import styles from './DigitalClock.module.css';
+
 
 function CitySearch({ onCitySelect }) {
     const [city, setCity] = useState('');
@@ -26,13 +29,14 @@ function CitySearch({ onCitySelect }) {
 
     return (
         <div>
-            <input
+            <input className={ styles.citySearch }
                 type="text"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 placeholder="Enter city name"
             />
-            <button onClick={handleSearch}>Search</button>
+            <button onClick={ handleSearch }>Search</button>
+            <Button onClick={ handleSearch } buttonText="Search"/>
             {error && <p>{error}</p>}
         </div>
     );

@@ -7,17 +7,13 @@ import Card from "./Card/Card";
 
 
 function App() {
-  // const digClockCard = {toyTitle: 'Digital Clock', toyDescription: 'This is a digital clock made with React featuring useState and useEffect, styled with CSS.' };
-  // const toDoListCard = {toyTitle: 'To Do List', toyDescription: 'This is a to-do list made with React featuring useState, styled with CSS.' };
-  // const colorPickerCard = { toyTitle: 'Color Picker', toyDescription: 'This is a color picker made with React featuring useState, styled with CSS.' };
   return (
     <>
       <Card toyTitle='Digital Clock' toyDescription='This is a digital clock made with React featuring useState and useEffect, styled with CSS.' />
       <Card toyTitle='To Do List' toyDescription='This is a to-do list made with React featuring useState, styled with CSS.' />
       <Card toyTitle='Color Picker' toyDescription='This is a color picker made with React featuring useState, styled with CSS.' />
-      <DigitalClock/>
-      {/*<DigitalClock timeZone="Europe/London" />*/}
-      {/*<DigitalClock timeZone="Asia/Tokyo" />*/}
+      <DigitalClock />
+      <ToDoList/>
     </>
   );
 }

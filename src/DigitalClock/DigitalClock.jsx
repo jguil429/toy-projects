@@ -29,15 +29,15 @@ function DigitalClock() {
     }
 
     return (
-        <div>
-            <CitySearch onCitySelect={setTimeZone} />
-            <div className={styles.clockcontainer}>
+            <div className={styles.clockWrapper}>
+            <div className={styles.clockContainer}>
+                <CitySearch onCitySelect={setTimeZone} />
                 <div className={styles.clock}>
-                    <span>{formatTime()}</span>
+                <span>{formatTime()}</span>
                 </div>
-                <div>{timeZone}</div>
+                <div className={styles.timeZone}>{timeZone}</div>
             </div>
-        </div>
+            </div>
     );
 }
 
