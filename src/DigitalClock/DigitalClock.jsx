@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styles from './DigitalClock.module.css';
+import CitySearch from './CitySearch';
 
-function DigitalClock({ timeZone }) {
+function DigitalClock() {
     const [time, setTime] = useState(new Date());
+    const [timeZone, setTimeZone] = useState('UTC');
 
     useEffect(() => {
         const intervalID = setInterval(() => {
@@ -11,7 +13,7 @@ function DigitalClock({ timeZone }) {
 
         return () => {
             clearInterval(intervalID);
-        }
+        };
     }, []);
 
     function formatTime() {
@@ -27,13 +29,16 @@ function DigitalClock({ timeZone }) {
     }
 
     return (
-        <div className={styles.clockcontainer}>
-            <div className={styles.clock}>
-                <span>{formatTime()}</span>
+        <div>
+            <CitySearch onCitySelect={setTimeZone} />
+            <div className={styles.clockcontainer}>
+                <div className={styles.clock}>
+                    <span>{formatTime()}</span>
+                </div>
+                <div>{timeZone}</div>
             </div>
-            <div>{timeZone}</div>
         </div>
-    )
+    );
 }
 
 export default DigitalClock;
