@@ -1,38 +1,35 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
 }
 
-.colorpickercontainer {
+.colorPickerContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* width: 200px; */
 }
 
-h1{
-    margin: 50px;
-    font-size: 3rem;
-}
-
-.colordisplay {
-    width: 300px;
-    height: 300px;
+.colorDisplay {
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     border: 5px solid hsl(0, 0%, 80%);
     border-radius: 25px;
     margin-bottom: 25px;
     transition: .25s ease;
 }
 
-.colordisplay p {
+.colorDisplay p {
     color: hsl(0, 0%, 20%);
-    font-size: 2rem;
+    font-size: 1rem;
     text-align: center;
+    color: black;
 }
 
 label {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -43,4 +40,30 @@ input[type="color"] {
     padding: 5px;
     border-radius: 10px;
     border: 3px solid hsl(0, 0%, 80%);
+}
+
+@media (max-width: 1200px) {
+    /* .colorPickerContainer {
+        width: 150px;
+    } */
+
+    .colorDisplay {
+        height: 175px;
+        width: 175px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+    .colorDisplay p {
+        font-size: 0.8rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    input[type="color"] {
+        width: 60px;
+        height: 40px;
+    }
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import ColorPicker from "./ColorPicker/ColorPicker";
 import DigitalClock from "./DigitalClock/DigitalClock";
 import ToDoList from "./ToDoList/ToDoList";
 import RandomTrivia from "./RandomTrivia/RandomTrivia";
 import Card from "./Card/Card";
 import './App.css';
+import ColorPalette from './ColorPicker/ColorPalette';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/clock" element={<DigitalClock />} />
         <Route path="/list" element={<ToDoList />} />
-        <Route path="/color" element={<ColorPicker />} />
+        <Route path="/color" element={<ColorPalette />} />
         <Route path="/trivia" element={<RandomTrivia />} />
         <Route path="/" element={
           <div className='container'>
@@ -31,7 +31,7 @@ function App() {
               className="card"
             />
             <Card 
-              toyTitle='Color Picker'
+              toyTitle='Color Palette Picker'
               toyDescription='This is a color picker made with React featuring useState and styled with CSS.'
               route='/color'
               className="card"

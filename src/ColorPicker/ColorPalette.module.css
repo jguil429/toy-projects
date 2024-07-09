@@ -1,0 +1,46 @@
+.paletteContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+}
+
+.paletteHeader {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.colorPickers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.gradientBar {
+    width: 80%;
+    height: 100px;
+    margin: auto;
+    margin-top: 40px; 
+     border: 5px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+}
+
+@media (max-width: 1200px) {
+    .paletteHeader {
+        font-size: 1.5rem;
+    }
+
+    .colorPickers {
+        gap: 20px;
+    }
+
+    .gradientBar {
+        width: 80%;
+        height: 80px;
+    }
+}
