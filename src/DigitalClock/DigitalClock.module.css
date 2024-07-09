@@ -1,13 +1,10 @@
 .clockContainer {
-    /*background-position: center;*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: cover;*/
-    /*background-attachment: fixed;*/
-    /*min-height: 100vh;*/
-    background-color: lightskyblue;
+    background-color: rgba(111, 111, 111, 0.6);
     position: absolute;
     left: 50%;
     top: 50%;
+    width: 50%;
+    border-radius: 10px;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     display: flex;
@@ -15,7 +12,7 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    opacity: 0.9;
+    padding: 10px;
 }
 
 .clock {
@@ -45,3 +42,62 @@
     color: hsla(0, 0%, 0%, .5);
 }
 
+.clockButton {
+    padding: 12px;
+    font-size: 1.2rem;
+    font-family: monospace;
+}
+
+@media (max-width: 707px) {
+    .clockContainer {
+        width: 80%;
+        padding: 5px;
+        gap: 10px;
+    }
+
+    .clock {
+        font-size: 4rem;
+    }
+
+    .timeZone {
+        font-size: 1.5rem;
+    }
+
+    .citySearch {
+        font-size: 1rem;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .clockButton {
+        padding: 8px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 347px) {
+    .clockContainer {
+        width: 90%;
+        padding: 3px;
+        gap: 5px;
+    }
+
+    .clock {
+        font-size: 3rem;
+    }
+
+    .timeZone {
+        font-size: 1.2rem;
+    }
+
+    .citySearch {
+        font-size: 0.8rem;
+        padding: 3px;
+        margin: 3px;
+    }
+
+    .clockButton {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+}

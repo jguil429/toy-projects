@@ -34,7 +34,7 @@ function DigitalClock() {
     return (
         <div className={styles.clockWrapper} style={{ backgroundImage: `url(${backgroundImage})`, height: '100vh', backgroundSize: 'cover' }}>
             <div className={styles.clockContainer}>
-                <CitySearch onCitySelect={setTimeZone} onBackgroundImageUpdate={setBackgroundImage} />
+                <CitySearch onCitySelect={setTimeZone} onBackgroundImageUpdate={setBackgroundImage} defaultBackgroundImage={ defaultBackgroundImage } />
                 <div className={styles.clock}>
                     <span>{formatTime()}</span>
                 </div>

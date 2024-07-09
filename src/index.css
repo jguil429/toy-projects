@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  gap: 20px; /* Space between cards */
+}
+
+.card {
+  flex: 1; /* Allow cards to grow and shrink */
+  max-width: 300px; /* Optional: Limit the maximum width of each card */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fff;
+}
