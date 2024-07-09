@@ -41,14 +41,8 @@ function CitySearch({ onCitySelect, onBackgroundImageUpdate }) {
                    onChange={(e) => setCity(e.target.value)}
                    placeholder="Enter city name"
             />
-<<<<<<< HEAD
-            {/* <button onClick={ handleSearch }>Search</button> */}
-            <Button onClick={ handleSearch } buttonText="Search"/>
-            {error && <p>{error}</p>}
-=======
             <Button onClick={handleSearch} buttonText="Search" />
             {/*{error && <p>{error}</p>}*/}
->>>>>>> 60dd9bbd688cccd4be56503cbacb3fb9020111e3
         </div>
     );
 }
