@@ -61,30 +61,13 @@ function ToDoList() {
                 </div>
             </div>
             <div className={styles.taskContainer}>
-                <div className={styles.tasks}>
-                    <h2>Tasks</h2>
-                    <ol>
-                        {tasks.map((task, index) =>
-                            <li key={ index }>
-                                <div className={ styles.leftButtons }>
-                                    <button className={styles.moveButton} onClick={() => moveTaskUp(index)}>
-                                        &#8593;
-                                    </button>
-                                    <button className={styles.moveButton} onClick={() => moveTaskDown(index)}>
-                                        &#8595;
-                                    </button>
-                                </div>
-                                <span className={styles.text}>{task}</span>
-                                <button className={styles.completeButton} onClick={() => completeTask(index)}>
-                                    &#10003;
-                                </button>
-                                <button className={styles.deleteButton} onClick={() => deleteTask(index)}>
-                                    &#10007;
-                                </button>
-                               
-                            </li>)}
-                    </ol>
-                </div>
+                <TodoTasks
+                    tasks={tasks}
+                    moveTaskUp={moveTaskUp}
+                    moveTaskDown={moveTaskDown}
+                    completeTask={completeTask}
+                    deleteTask={deleteTask}
+                />
                 <CompletedTasks tasks={completedTasks} />
             </div>
         </div>
@@ -93,12 +76,41 @@ function ToDoList() {
 
 function CompletedTasks({ tasks }) {
     return (
-        <div className={styles.completedtasks}>
+        <div className={styles.completedTasks}>
             <h2>Completed Tasks</h2>
             <ol>
                 {tasks.map((task, index) =>
                     <li key={index}>
                         <span className={styles.text}><s>{task}</s></span>
+                    </li>)}
+            </ol>
+        </div>
+    );
+}
+
+function TodoTasks({ tasks, moveTaskUp, moveTaskDown, completeTask, deleteTask }) {
+    return (
+        <div className={styles.tasks}>
+            <h2>Tasks</h2>
+            <ol>
+                {tasks.map((task, index) =>
+                    <li key={index}>
+                        <div className={styles.leftButtons}>
+                            <button className={styles.moveButton} onClick={() => moveTaskUp(index)}>
+                                &#8593;
+                            </button>
+                            <button className={styles.moveButton} onClick={() => moveTaskDown(index)}>
+                                &#8595;
+                            </button>
+                        </div>
+                        <span className={styles.text}>{task}</span>
+                        <button className={styles.completeButton} onClick={() => completeTask(index)}>
+                            &#10003;
+                        </button>
+                        <button className={styles.deleteButton} onClick={() => deleteTask(index)}>
+                            &#10007;
+                        </button>
+
                     </li>)}
             </ol>
         </div>
