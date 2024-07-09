@@ -42,7 +42,6 @@ function CitySearch({ onCitySelect, onBackgroundImageUpdate }) {
                    placeholder="Enter city name"
             />
             <Button onClick={handleSearch} buttonText="Search" />
-            {/*{error && <p>{error}</p>}*/}
         </div>
     );
 }
