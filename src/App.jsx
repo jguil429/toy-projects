@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import ColorPicker from "./ColorPicker/ColorPicker";
 import DigitalClock from "./DigitalClock/DigitalClock";
 import ToDoList from "./ToDoList/ToDoList";
+import RandomTrivia from "./RandomTrivia/RandomTrivia";
 import Card from "./Card/Card";
 import './App.css';
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/clock" element={<DigitalClock />} />
         <Route path="/list" element={<ToDoList />} />
         <Route path="/color" element={<ColorPicker />} />
+        <Route path="/trivia" element={<RandomTrivia />} />
         <Route path="/" element={
           <div className='container'>
             <Card 
