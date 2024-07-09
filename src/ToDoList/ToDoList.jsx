@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from "./ToDoList.module.css";
 
 function ToDoList() {
-
     const [tasks, setTasks] = useState([]);
     const [completedTasks, setCompletedTasks] = useState([]);
     const [newTask, setNewTask] = useState("");
@@ -16,13 +15,11 @@ function ToDoList() {
             setTasks(t => [...t, newTask]);
             setNewTask('');
         }
-        
     }
 
     function deleteTask(index) {
         const updatedTasks = tasks.filter((_, i) => i !== index);
         setTasks(updatedTasks);
-        
     }
 
     function completeTask(index) {
@@ -30,7 +27,6 @@ function ToDoList() {
         const updatedTasks = tasks.filter((_, i) => i !== index);
         setTasks(updatedTasks);
         setCompletedTasks(ct => [...ct, taskToComplete]);
-        
     }
 
     function moveTaskUp(index) {
@@ -51,37 +47,48 @@ function ToDoList() {
         }
     }
 
-    return (<div className={styles.todolist}>
-        <h1>To Do List</h1>
-        <div>
-            <input className={styles.toDoInput}
-                type="text"
-                placeholder='Enter a task...'
-                value={ newTask }
-                onChange={ handleInputChange } />
-            <button className={styles.addbutton}
-                    onClick={addTask}>Add</button>
+    return (
+        <div className={ styles.toDoList }>
+            <div className={styles.inputContainer}>
+                <div>
+                    <input className={styles.toDoInput}
+                        type="text"
+                        placeholder='Enter a task...'
+                        value={newTask}
+                        onChange={handleInputChange} />
+                    <button className={styles.addButton}
+                            onClick={addTask}>Add</button>
+                </div>
+            </div>
+            <div className={styles.taskContainer}>
+                <div className={styles.tasks}>
+                    <h2>Tasks</h2>
+                    <ol>
+                        {tasks.map((task, index) =>
+                            <li key={ index }>
+                                <div className={ styles.leftButtons }>
+                                    <button className={styles.moveButton} onClick={() => moveTaskUp(index)}>
+                                        &#8593;
+                                    </button>
+                                    <button className={styles.moveButton} onClick={() => moveTaskDown(index)}>
+                                        &#8595;
+                                    </button>
+                                </div>
+                                <span className={styles.text}>{task}</span>
+                                <button className={styles.completeButton} onClick={() => completeTask(index)}>
+                                    &#10003;
+                                </button>
+                                <button className={styles.deleteButton} onClick={() => deleteTask(index)}>
+                                    &#10007;
+                                </button>
+                               
+                            </li>)}
+                    </ol>
+                </div>
+                <CompletedTasks tasks={completedTasks} />
+            </div>
         </div>
-        <ol>
-            { tasks.map((task, index) => 
-                <li key={ index }>
-                    <span className={ styles.text }>{ task }</span>
-                    <button className={styles.completebutton} onClick={() => completeTask(index)}>
-                        &#10003;
-                    </button>
-                    <button className={styles.deletebutton} onClick={() => deleteTask(index)}>
-                        &#10007;
-                    </button>
-                    <button className={styles.movebutton} onClick={() => moveTaskUp(index)}>
-                       &#8593;
-                    </button>
-                    <button className={styles.movebutton} onClick={() => moveTaskDown(index)}>
-                        &#8595;
-                    </button>
-                </li>) }
-        </ol>
-        <CompletedTasks tasks={completedTasks} />
-    </div>)
+    )
 }
 
 function CompletedTasks({ tasks }) {
@@ -89,13 +96,13 @@ function CompletedTasks({ tasks }) {
         <div className={styles.completedtasks}>
             <h2>Completed Tasks</h2>
             <ol>
-                { tasks.map((task, index) => 
-                    <li key={ index }>
-                        <span className={ styles.text }>{ task }</span>
-                    </li>) }
+                {tasks.map((task, index) =>
+                    <li key={index}>
+                        <span className={styles.text}><s>{task}</s></span>
+                    </li>)}
             </ol>
         </div>
     );
 }
 
-export default ToDoList
+export default ToDoList;
