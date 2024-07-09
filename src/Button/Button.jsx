@@ -1,12 +1,16 @@
-import styles from './Button.module.css'
+import styles from './Button.module.css';
+import React from 'react';
 
-function Button(props) {
-    const buttonText = props.buttonText
 
-    const handleClick = (e) => e.target.textContent = "Ouch!";
+function Button({ onClick, buttonText }) {
+
     return (
-        <button className={ styles.button }>{ buttonText }</button>
+        <button onClick={ onClick }
+                className={ styles.button }>
+                { buttonText }
+        </button>
     );
 }
+
 
 export default Button

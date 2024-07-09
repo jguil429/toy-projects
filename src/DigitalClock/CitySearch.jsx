@@ -35,7 +35,7 @@ function CitySearch({ onCitySelect }) {
                 onChange={(e) => setCity(e.target.value)}
                 placeholder="Enter city name"
             />
-            <button onClick={ handleSearch }>Search</button>
+            {/* <button onClick={ handleSearch }>Search</button> */}
             <Button onClick={ handleSearch } buttonText="Search"/>
             {error && <p>{error}</p>}
         </div>
