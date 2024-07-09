@@ -42,10 +42,7 @@ input[type="color"] {
     border: 3px solid hsl(0, 0%, 80%);
 }
 
-@media (max-width: 1200px) {
-    /* .colorPickerContainer {
-        width: 150px;
-    } */
+@media (max-width: 1260px) {
 
     .colorDisplay {
         height: 175px;
@@ -67,3 +64,43 @@ input[type="color"] {
         height: 40px;
     }
 }
+
+@media (max-width: 1020px) {
+
+    .colorDisplay {
+        height: 150px;
+        width: 150px;
+    }
+}
+
+@media (max-width: 895px) {
+
+    .colorDisplay {
+        height: 125px;
+        width: 125px;
+        border: 3px solid hsl(0, 0%, 80%);
+
+    }
+
+    .colorDisplay p {
+        font-size: 0.6rem;
+    }
+
+    label {
+        font-size: .8rem;
+    }
+
+    input[type="color"] {
+        width: 50px;
+        height: 30px;
+        padding: 2px;
+    }
+}
+
+@media (max-width: 745px) {
+    .colorDisplay {
+        height: 100px;
+        width: 100px;
+    }
+}
+
