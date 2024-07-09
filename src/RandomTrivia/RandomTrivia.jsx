@@ -51,28 +51,30 @@ function RandomTrivia() {
     };
 
     return (
-        <div>
-            <Button onClick={generateQuestion} buttonText="Riddle Me This..."/>
-            <div className={styles.questionContainer}>
-                {error ? <p>{error}</p> : <p dangerouslySetInnerHTML={{ __html: question }} />}
-                {options.length > 0 && (
-                    <div>
-                        {options.map((option, index) => (
-                            <div key={index}>
-                                <input
-                                    type="radio"
-                                    id={`option-${index}`}
-                                    name="trivia"
-                                    value={option}
-                                    checked={selectedAnswer === option}
-                                    onChange={handleOptionChange}
-                                />
-                                <label htmlFor={`option-${index}`} dangerouslySetInnerHTML={{ __html: option }} />
-                            </div>
-                        ))}
-                    </div>
-                )}
-                {result && <p>{result}</p>}
+        <div className={ styles.container }>
+            <div className={ styles.content }>
+                <Button onClick={generateQuestion} className={ styles.triviaButton } buttonText="Riddle Me This..."/>
+                <div className={styles.questionContainer}>
+                    {error ? <p>{error}</p> : <p dangerouslySetInnerHTML={{ __html: question }} />}
+                    {options.length > 0 && (
+                        <div>
+                            {options.map((option, index) => (
+                                <div key={index}>
+                                    <input
+                                        type="radio"
+                                        id={`option-${index}`}
+                                        name="trivia"
+                                        value={option}
+                                        checked={selectedAnswer === option}
+                                        onChange={handleOptionChange}
+                                    />
+                                    <label htmlFor={`option-${index}`} dangerouslySetInnerHTML={{ __html: option }} />
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                    { result && <p>{ result }</p> }
+                </div>
             </div>
         </div>
     );
