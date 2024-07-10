@@ -111,11 +111,10 @@ input[type="color"] {
 
 @media (max-width: 580px) {
     .colorDisplay {
-        height: 125px;
-        width: 125px;
+        height: 85px;
+        width: 85px;
         margin-bottom: 5px;
         border: 2px solid hsl(0, 0%, 80%);
-
     }
 
     label {
