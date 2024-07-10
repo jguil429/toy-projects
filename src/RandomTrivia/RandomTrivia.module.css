@@ -2,18 +2,22 @@
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh; /* Full viewport height */
     font-family: monospace;
+    margin-top: 40px;
 }
 
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 2rem;
 }
 
 .questionContainer {
+    height: 70vh;
+    width: 80vw;
     text-align: center;
     padding: 20px;
     border: 1px solid #ccc;
@@ -21,6 +25,34 @@
     background-color: #f9f9f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px; /* Add some space between the button and the question container */
+}
+
+.questionContainer p {
+    margin: 0px;
+}
+
+.optionsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create a 2 by 2 grid */
+    gap: 10px; /* Add space between the grid items */
+    margin-top: 20px; /* Add some space between the question and the options */
+}
+
+.option {
+    height: 20vh;
+    width: 38vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.option input {
+    margin-right: 10px; /* Add some space between the radio button and the label */
 }
 
 .triviaButton {
