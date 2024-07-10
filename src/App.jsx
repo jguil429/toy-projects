@@ -31,7 +31,7 @@ function App() {
               className="card"
             />
             <Card 
-              toyTitle='Color Palette Picker'
+              toyTitle='Color Palette'
               toyDescription='This is a color picker made with React featuring useState and styled with CSS.'
               route='/color'
               className="card"

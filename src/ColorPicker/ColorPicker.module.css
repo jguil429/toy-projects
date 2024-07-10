@@ -36,7 +36,7 @@ input[type="color"] {
     width: 75px;
     height: 50px;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 3px solid hsl(0, 0%, 80%);
 }
 
@@ -46,7 +46,7 @@ input[type="color"] {
         height: 175px;
         width: 175px;
         border-radius: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .colorDisplay p {
@@ -55,6 +55,8 @@ input[type="color"] {
 
     label {
         font-size: 1rem;
+        margin-bottom: 8px;
+
     }
 
     input[type="color"] {
@@ -77,7 +79,7 @@ input[type="color"] {
         height: 125px;
         width: 125px;
         border: 3px solid hsl(0, 0%, 80%);
-
+        margin-bottom: 6px;
     }
 
     .colorDisplay p {
@@ -86,6 +88,7 @@ input[type="color"] {
 
     label {
         font-size: .8rem;
+        margin-bottom: 6px;
     }
 
     input[type="color"] {
@@ -106,3 +109,16 @@ input[type="color"] {
     }
 }
 
+@media (max-width: 580px) {
+    .colorDisplay {
+        height: 125px;
+        width: 125px;
+        margin-bottom: 5px;
+        border: 2px solid hsl(0, 0%, 80%);
+
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+}

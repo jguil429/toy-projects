@@ -10,6 +10,10 @@
   display: inline-block;
 }
 
+.cardButton {
+  padding: 10px 10px;
+}
+
 .card .cardimg{
   max-width: 60%;
   height: auto;
@@ -18,12 +22,35 @@
 }
 
 .card .cardtitle{
-  font-family: Arial, sans-serif;
+  font-family: monospace;
   margin: 0;
   color: hsl(0, 0%, 20%)
 }
 
 .card .cardtext{
-  font-family: Arial, sans-serif;
+  font-family: monospace;
   color: hsl(0, 0%, 30%)
 }
+
+
+@media (max-width: 1194px) {
+.card {
+  max-width: 200px; 
+  max-height: 200px;
+  padding: 15px;
+}
+
+.card .cardtitle{
+  font-size: 1rem;
+}
+
+.card .cardtext{
+  font-size: .7rem;
+}
+
+.cardButton {
+  font-size: .7rem;
+  padding: 8px 8px;
+}
+}
+
