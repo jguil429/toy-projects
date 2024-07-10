@@ -20,7 +20,7 @@
     width: 80vw;
     text-align: center;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 5px solid hsl(225, 44%, 66%);
     border-radius: 10px;
     background-color: #f9f9f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -28,7 +28,7 @@
 }
 
 .questionContainer p {
-    margin: 0px;
+    margin: 20px;
 }
 
 .optionsContainer {
@@ -40,15 +40,19 @@
 
 .option {
     height: 20vh;
-    width: 38vw;
+    width: 36vw;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 5px solid hsl(225, 44%, 66%);
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.option:hover {
+    border: 5px solid hsl(225, 44%, 50%);
 }
 
 .option input {
@@ -59,4 +63,9 @@
     padding: 10px 20px;
     font-size: 1rem;
     font-family: monospace;
+    background-color:hsl(225, 44%, 66%);
+}
+
+.triviaButton:hover {
+    background-color:hsl(225, 44%, 50%);
 }
