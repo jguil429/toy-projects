@@ -31,6 +31,10 @@
     text-shadow: 3px 3px 5px hsla(0, 0%, 0%, .75);
 }
 
+.citySearchContainer {
+    text-align: center;
+}
+
 .citySearch {
     font-size: 1.2rem;
     font-family: monospace;
@@ -127,4 +131,12 @@
    .clock {
     font-size: 1.75rem;
    } 
+}
+
+.error {
+    font-size: 0.9rem;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
 }
