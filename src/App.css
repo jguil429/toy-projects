@@ -1,5 +1,7 @@
-body {
+html, body, #root {
+  height: 100%;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -7,47 +9,36 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
-  gap: 20px; 
+  gap: 20px;
+  height: 100%;
 }
 
-.card {
-  flex: 1; 
-  max-width: 300px; 
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  text-align: center;
-  background-color: #fff;
-}
-
-@media (max-width: 1194px) { 
-.container {
-  gap: 10px; 
-}
-}
-
-@media (max-width: 1060px) { 
+@media (max-width: 1194px) {
   .container {
-    display: grid; /* Use grid layout */
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    grid-gap: 20px; /* Gap between grid items */
-    justify-content: center; /* Center items horizontally */
-    align-content: center; /* Center items vertically */
-    place-items: center; /* Center items in both axes */
-    height: auto; /* Adjust height to auto for better centering */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    justify-content: center;
+    align-content: center;
+    place-items: center;
   }
 
-  .card {
-    max-width: 100%; /* Ensure cards take full width of grid column */
-    margin: 0; /* Remove margin to fit grid layout */
+  .container :nth-child(1),
+  .container :nth-child(3) {
+    margin: 0 0 0 auto;
+  }
+
+  .container :nth-child(2),
+  .container :nth-child(4) {
+    margin: 0 auto 0 0;
   }
 }
 
-@media (max-width: 580px) { 
-.container {
-  display: flex;
-  flex-direction: column; 
-  gap: 5px; 
-}
+@media (max-width: 680px) {
+  .container {
+    grid-template-columns: none;
+    align-content: flex-start;
+    padding: 20px 0;
+    height: fit-content;
+  }
 }

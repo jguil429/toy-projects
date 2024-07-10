@@ -22,25 +22,25 @@ function App() {
               toyTitle='Digital Clock'
               toyDescription='This is a digital clock made with React featuring useState and useEffect, styled with CSS.'
               route='/clock'
-              className="card"
+              // className="card"
             />
             <Card 
               toyTitle='To Do List'
               toyDescription='This is a to-do list made with React featuring useState and styled with CSS.'
               route='/list'
-              className="card"
+              // className="card"
             />
             <Card 
               toyTitle='Color Palette'
               toyDescription='This is a color picker made with React featuring useState and styled with CSS.'
               route='/color'
-              className="card"
+              // className="card"
             />
             <Card 
               toyTitle='Trivia Game'
               toyDescription='This is a trivia game made with React featuring useState and styled with CSS.'
               route='/trivia'
-              className="card"
+              // className="card"
             />
           </div>
         } />

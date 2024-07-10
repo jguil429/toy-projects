@@ -1,4 +1,5 @@
-.card{
+.card {
+  position: relative;
   border: 1px solid hsl(0, 0%, 80%);
   border-radius: 10px;
   box-shadow: 5px 5px 5px hsla(0, 0%, 0%, .1);
@@ -7,50 +8,39 @@
   padding: 20px;
   margin: 10px;
   text-align: center;
-  display: inline-block;
+}
+
+.cardContent {
+  padding-bottom: 50px;
+}
+
+.cardLink {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
 }
 
 .cardButton {
   padding: 10px 10px;
 }
 
-.card .cardimg{
+.card .cardimg {
   max-width: 60%;
   height: auto;
   border-radius: 50%;
   margin-bottom: 10px;
 }
 
-.card .cardtitle{
+.card .cardtitle {
   font-family: monospace;
   margin: 0;
-  color: hsl(0, 0%, 20%)
+  color: hsl(0, 0%, 20%);
 }
 
-.card .cardtext{
+.card .cardtext {
   font-family: monospace;
-  color: hsl(0, 0%, 30%)
+  color: hsl(0, 0%, 30%);
 }
-
-
-@media (max-width: 1194px) {
-.card {
-  max-width: 200px; 
-  max-height: 200px;
-  padding: 15px;
-}
-
-.card .cardtitle{
-  font-size: 1rem;
-}
-
-.card .cardtext{
-  font-size: .7rem;
-}
-
-.cardButton {
-  font-size: .7rem;
-  padding: 8px 8px;
-}
-}
-
