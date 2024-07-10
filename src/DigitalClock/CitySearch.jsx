@@ -9,7 +9,8 @@ function CitySearch({ onCitySelect, onBackgroundImageUpdate, defaultBackgroundIm
     const ipGeolocationApiKey = import.meta.env.VITE_IPGEOLOCATION_API_KEY;
     const unsplashApiKey = import.meta.env.VITE_UNSPLASH_API_KEY;
 
-    const handleSearch = async () => {
+    const handleSearch = async (e) => {
+        e.preventDefault()
         try {
             // Fetch timezone data
             const url = `https://api.ipgeolocation.io/timezone?apiKey=${ipGeolocationApiKey}&location=${city}`;
@@ -34,15 +35,20 @@ function CitySearch({ onCitySelect, onBackgroundImageUpdate, defaultBackgroundIm
     };
 
     return (
-        <div>
-            <input className={styles.citySearch}
-                   type="text"
-                   value={city}
-                   onChange={(e) => setCity(e.target.value)}
-                   placeholder="Enter city name"
-            />
-            <Button onClick={ handleSearch } buttonText="Search" className={ styles.clockButton } />
-            {/*{error && <p>{error}</p>}*/}
+        <div className={styles.citySearchContainer}>
+            <form onSubmit={handleSearch}>
+                <div>
+                    <input
+                        className={styles.citySearch}
+                        type="text"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                        placeholder="Enter city name"
+                    />
+                    <Button type="submit" buttonText="Search" className={styles.clockButton} />
+                </div>
+            </form>
+            {error && <span className={styles.error}>{error}</span>}
         </div>
     );
 }
