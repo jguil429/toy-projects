@@ -12,7 +12,7 @@ function Card({ toyTitle, toyDescription, route }) {
       <h2 className={styles.cardtitle}>{toyTitle}</h2>
       <p className={styles.cardtext}>{toyDescription}</p>
       <Link to={route}>
-        <Button buttonText='Play with toy' />
+        <Button className={styles.cardButton} buttonText='Play with toy' />
       </Link>
     </div>
   );

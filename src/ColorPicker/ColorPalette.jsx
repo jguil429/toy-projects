@@ -16,21 +16,27 @@ function ColorPalette() {
     };
 
     return (
-        <>
-            <div className={ styles.paletteContainer }>
-                <h1 className={ styles.paletteHeader }>Choose a Color Palette:</h1>
-                <div className={ styles.colorPickers }>
-                {colors.map((color, index) => (
-                    <ColorPicker
-                        key={index}
-                        color={color}
-                        onColorChange={(newColor) => handleColorChange(index, newColor)}
-                    />
-                )) }
+        <div>
+            <h1 className={ styles.paletteHeader }>Choose a Color Palette:</h1>
+
+            <div className={ styles.wrapper }>
+                <div className={ styles.paletteContainer }>
+                    <div className={ styles.colorPickers }>
+                    {colors.map((color, index) => (
+                        <ColorPicker
+                            key={index}
+                            color={color}
+                            onColorChange={(newColor) => handleColorChange(index, newColor)}
+                        />
+                    )) }
+                    </div>
+                </div>
+
+                <div className={ styles.gradientContainer }>
+                    <div className={ styles.gradientBar } style={ gradientStyle }></div>
                 </div>
             </div>
-            <div className={styles.gradientBar} style={gradientStyle}></div>
-        </>
+        </div>
     );
 }
 

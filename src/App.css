@@ -7,16 +7,38 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
-  gap: 20px; /* Space between cards */
+  height: 100vh; 
+  gap: 20px; 
 }
 
 .card {
-  flex: 1; /* Allow cards to grow and shrink */
-  max-width: 300px; /* Optional: Limit the maximum width of each card */
+  flex: 1; 
+  max-width: 300px; 
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   text-align: center;
   background-color: #fff;
+}
+
+@media (max-width: 1194px) { 
+.container {
+  gap: 10px; 
+}
+}
+
+@media (max-width: 1000px) { 
+  .container {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-gap: 0px; /* Gap between grid items */
+    justify-content: center; /* Center items horizontally */
+    align-content: center; /* Center items vertically */
+    height: auto; /* Adjust height to auto for better centering */
+  }
+
+  .card {
+    max-width: 100%; /* Ensure cards take full width of grid column */
+    margin: 0; /* Remove margin to fit grid layout */
+  }
 }

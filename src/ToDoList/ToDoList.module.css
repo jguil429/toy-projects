@@ -123,7 +123,6 @@ li {
     margin-right: 10px;
 }
 
-/* Updated styles for task layout */
 .taskContainer {
     display: flex;
     flex-direction: column;
@@ -155,7 +154,25 @@ h2 {
     margin-right: 10px;
 }
 
-@media (max-width: 585px) {
+@media (max-width: 870px) {
+.toDoInput {
+    font-size: 1.4rem;
+    padding: 10px;
+    margin: 5px;
+}
+
+.addButton {
+    font-size: 1.4rem;
+    padding: 10px 20px;
+}
+
+.tasks,
+.completedTasks {
+    margin-top: 0px;
+}
+}
+
+@media (max-width: 610px) {
     .completeButton,
     .deleteButton,
     .moveButton {
@@ -173,12 +190,12 @@ h2 {
     }
 
     .addButton {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         padding: 8px 16px;
     }
 
     .toDoInput {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         padding: 8px;
     }
 
@@ -192,7 +209,7 @@ h2 {
     }
 }
 
-@media (max-width: 474px) {
+@media (max-width: 540px) {
     .completeButton,
     .deleteButton,
     .moveButton {
@@ -210,12 +227,12 @@ h2 {
     }
 
     .addButton {
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding: 8px 16px;
     }
 
     .toDoInput {
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding: 8px;
     }
 
@@ -247,12 +264,12 @@ h2 {
     }
 
     .addButton {
-        font-size: 1rem;
+        font-size: .8rem;
         padding: 8px 16px;
     }
 
     .toDoInput {
-        font-size: 1rem;
+        font-size: .8rem;
         padding: 8px;
     }
 

@@ -48,38 +48,33 @@
     font-family: monospace;
 }
 
-@media (max-width: 707px) {
-    .clockContainer {
-        width: 80%;
-        padding: 5px;
-        gap: 10px;
-    }
-
-    .clock {
-        font-size: 4rem;
-    }
-
-    .timeZone {
-        font-size: 1.5rem;
-    }
-
-    .citySearch {
-        font-size: 1rem;
-        padding: 5px;
-        margin: 5px;
-    }
-
-    .clockButton {
-        padding: 8px;
-        font-size: 1rem;
-    }
+@media (max-width: 1162px) {
+.clock {
+    font-size: 5rem;
+}
 }
 
-@media (max-width: 347px) {
+@media (max-width: 968px) {
+.clock {
+    font-size: 4rem;
+}
+
+.citySearch {
+    font-size: 1rem;
+    padding: 8px;
+}
+
+.clockButton {
+    padding: 10px;
+    font-size: 1rem;
+}
+}
+
+@media (max-width: 775px) {
     .clockContainer {
-        width: 90%;
-        padding: 3px;
-        gap: 5px;
+        width: 60%;
+        padding: 5px;
+        gap: 10px;
     }
 
     .clock {
@@ -87,17 +82,49 @@
     }
 
     .timeZone {
+        font-size: 1.5rem;
+    }
+
+    .citySearch {
+        font-size: .8rem;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .clockButton {
+        padding: 7px;
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 485px) {
+    .clockContainer {
+        padding: 3px;
+        gap: 5px;
+    }
+
+    .clock {
+        font-size: 2rem;
+    }
+
+    .timeZone {
         font-size: 1.2rem;
     }
 
     .citySearch {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
         padding: 3px;
         margin: 3px;
     }
 
     .clockButton {
         padding: 6px;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
+}
+
+@media (max-width: 322px) { 
+   .clock {
+    font-size: 1.75rem;
+   } 
 }
