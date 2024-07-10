@@ -31,9 +31,10 @@ body {
   .container {
     display: grid; /* Use grid layout */
     grid-template-columns: 1fr 1fr; /* Two columns */
-    grid-gap: 0px; /* Gap between grid items */
+    grid-gap: 20px; /* Gap between grid items */
     justify-content: center; /* Center items horizontally */
     align-content: center; /* Center items vertically */
+    place-items: center; /* Center items in both axes */
     height: auto; /* Adjust height to auto for better centering */
   }
 
