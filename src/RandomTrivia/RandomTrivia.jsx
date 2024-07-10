@@ -40,10 +40,19 @@ function RandomTrivia() {
         }
     };
 
-    const handleOptionChange = (event) => {
-        const selectedOption = event.target.value;
-        setSelectedAnswer(selectedOption);
-        if (selectedOption === correctAnswer) {
+    // const handleOptionChange = (event) => {
+    //     const selectedOption = event.target.value;
+    //     setSelectedAnswer(selectedOption);
+    //     if (selectedOption === correctAnswer) {
+    //         setResult('Correct!');
+    //     } else {
+    //         setResult('Incorrect!');
+    //     }
+    // };
+
+    const handleOptionClick = (option) => {
+        setSelectedAnswer(option);
+        if (option === correctAnswer) {
             setResult('Correct!');
         } else {
             setResult('Incorrect!');
@@ -54,19 +63,27 @@ function RandomTrivia() {
         <div className={ styles.container }>
             <div className={ styles.content }>
                 <Button onClick={generateQuestion} className={ styles.triviaButton } buttonText="Riddle Me This..."/>
-                <div className={`${styles.questionContainer} ${ styles.result}`}>
+                <div className={styles.questionContainer}>
                     {error ? <p>{error}</p> : <p dangerouslySetInnerHTML={{ __html: question }} />}
                     {options.length > 0 && (
                         <div className={styles.optionsContainer}>
                             {options.map((option, index) => (
-                                <div key={index} className={styles.option}>
+                                <div key={ index }
+                                    className={ `${styles.option}  
+                                                 ${selectedAnswer === option
+                                                    ? (option === correctAnswer
+                                                    ? styles.correct : styles.incorrect)
+                                                    : ''}
+                                              ` }
+                                    onClick={() => handleOptionClick(option)}>
                                     <input
                                         type="radio"
                                         id={`option-${index}`}
                                         name="trivia"
                                         value={option}
-                                        checked={selectedAnswer === option}
-                                        onChange={handleOptionChange}
+                                        checked={ selectedAnswer === option }
+                                        readOnly
+                                        // onChange={handleOptionChange}
                                     />
                                     <label htmlFor={`option-${index}`} dangerouslySetInnerHTML={{ __html: option }} />
                                 </div>
@@ -81,3 +98,4 @@ function RandomTrivia() {
 }
 
 export default RandomTrivia;
+

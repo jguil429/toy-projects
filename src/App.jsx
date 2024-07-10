@@ -15,7 +15,7 @@ function App() {
         <Route path="/clock" element={<DigitalClock />} />
         <Route path="/list" element={<ToDoList />} />
         <Route path="/color" element={<ColorPalette />} />
-        <Route path="/trivia" element={<RandomTrivia />} />
+        <Route path="/trivia" element={ <RandomTrivia /> } />
         <Route path="/" element={
           <div className='container'>
             <Card 
