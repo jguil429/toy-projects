@@ -2,10 +2,9 @@
 .container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; /* Center vertically and horizontally */
     height: 100vh; /* Full viewport height */
     font-family: monospace;
-    margin-top: 40px;
 }
 
 .content {
@@ -13,6 +12,27 @@
     flex-direction: column;
     align-items: center;
     font-size: 2rem;
+    transition: all 0.5s ease-in-out; /* Add transition for all properties */
+}
+
+.triviaButton {
+    padding: 10px 20px;
+    font-size: 3rem;
+    font-family: monospace;
+    background-color: hsl(225, 44%, 66%);
+    transition: all 0.5s ease-in-out; /* Add transition for all properties */
+    position: absolute; /* Ensure the button can be moved */
+    top: 45%;
+}
+
+.triviaButtonTop {
+    animation: 2s moveToTop forwards;
+}
+
+.triviaButton:hover {
+    background-color: hsl(225, 44%, 50%);
+    transform: scale(1.1);
+
 }
 
 .questionContainer {
@@ -25,6 +45,30 @@
     background-color: #f9f9f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px; /* Add some space between the button and the question container */
+    transition: opacity 0.5s ease-in-out; /* Add transition for opacity */
+    animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveToTop {
+    0% {
+        top: 45%;
+    }
+    100% {
+        top: 5%;
+        font-size: 1rem;
+    }
 }
 
 .questionContainer p {
@@ -38,12 +82,12 @@
     margin-top: 20px; /* Add some space between the question and the options */
 }
 
-.optionsContainer :nth-child(1 of div), 
+.optionsContainer :nth-child(1 of div),
 .optionsContainer :nth-child(3 of div) {
     margin: 0 0 0 auto;
 }
 
-.optionsContainer :nth-child(2 of div), 
+.optionsContainer :nth-child(2 of div),
 .optionsContainer :nth-child(4 of div) {
     margin: 0 auto 0 0;
 }
@@ -82,16 +126,4 @@
 .option.incorrect {
     background-color: hsl(0, 65%, 60%); /* Highlight the incorrect option */
     color: white;
-}
-
-
-.triviaButton {
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-family: monospace;
-    background-color:hsl(225, 44%, 66%);
-}
-
-.triviaButton:hover {
-    background-color:hsl(225, 44%, 50%);
 }

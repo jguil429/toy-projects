@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './RandomTrivia.module.css';
 import Button from "../Button/Button.jsx";
 import axios from "axios";
@@ -10,6 +10,7 @@ function RandomTrivia() {
     const [selectedAnswer, setSelectedAnswer] = useState('');
     const [result, setResult] = useState(null);
     const [error, setError] = useState(null);
+    const [showQuestion, setShowQuestion] = useState(false); // New state variable
 
     const shuffleArray = (array) => {
         return array.sort(() => Math.random() - 0.5);
@@ -32,6 +33,7 @@ function RandomTrivia() {
                 setSelectedAnswer('');
                 setResult(null);
                 setError(null);
+                setShowQuestion(true); // Show the question container
             } else {
                 setError('Oops! Something went wrong :(');
             }
@@ -39,16 +41,6 @@ function RandomTrivia() {
             setError('Oops! Something went wrong :(');
         }
     };
-
-    // const handleOptionChange = (event) => {
-    //     const selectedOption = event.target.value;
-    //     setSelectedAnswer(selectedOption);
-    //     if (selectedOption === correctAnswer) {
-    //         setResult('Correct!');
-    //     } else {
-    //         setResult('Incorrect!');
-    //     }
-    // };
 
     const handleOptionClick = (option) => {
         setSelectedAnswer(option);
@@ -61,41 +53,43 @@ function RandomTrivia() {
 
     return (
         <div className={ styles.container }>
-            <div className={ styles.content }>
-                <Button onClick={generateQuestion} className={ styles.triviaButton } buttonText="Riddle Me This..."/>
-                <div className={styles.questionContainer}>
-                    {error ? <p>{error}</p> : <p dangerouslySetInnerHTML={{ __html: question }} />}
-                    {options.length > 0 && (
-                        <div className={styles.optionsContainer}>
-                            {options.map((option, index) => (
-                                <div key={ index }
-                                    className={ `${styles.option}  
-                                                 ${selectedAnswer === option
-                                                    ? (option === correctAnswer
-                                                    ? styles.correct : styles.incorrect)
-                                                    : ''}
-                                              ` }
-                                    onClick={() => handleOptionClick(option)}>
-                                    <input
-                                        type="radio"
-                                        id={`option-${index}`}
-                                        name="trivia"
-                                        value={option}
-                                        checked={ selectedAnswer === option }
-                                        readOnly
-                                        // onChange={handleOptionChange}
-                                    />
-                                    <label htmlFor={`option-${index}`} dangerouslySetInnerHTML={{ __html: option }} />
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                    { result && <p>{ result }</p> }
-                </div>
+            <div className={ `${styles.content} ${showQuestion ? styles.contentWithQuestion : ''}` }>
+                <Button onClick={generateQuestion} className={ `${styles.triviaButton} ${showQuestion ? styles.triviaButtonTop : ''}` } buttonText="Riddle Me This..."/>
+                {showQuestion && (
+                    <div className={ `${styles.questionContainer} ${styles.fadeIn}` }>
+                        {error ? <p>{error}</p> : <p dangerouslySetInnerHTML={{ __html: question }} />}
+                        {options.length > 0 && (
+                            <div className={styles.optionsContainer}>
+                                {options.map((option, index) => (
+                                    <div key={ index }
+                                         className={ `${styles.option}  
+                                                     ${selectedAnswer === option
+                                             ? (option === correctAnswer
+                                                 ? styles.correct : styles.incorrect)
+                                             : ''}
+                                                  ` }
+                                         onClick={() => handleOptionClick(option)}>
+                                        <input
+                                            type="radio"
+                                            id={`option-${index}`}
+                                            name="trivia"
+                                            value={option}
+                                            checked={ selectedAnswer === option }
+                                            readOnly
+                                        />
+                                        <label htmlFor={`option-${index}`} dangerouslySetInnerHTML={{ __html: option }} />
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                        { result && <p>{ result }</p> }
+                    </div>
+                )}
             </div>
         </div>
     );
 }
 
 export default RandomTrivia;
+
 
