@@ -27,7 +27,7 @@ body {
 }
 }
 
-@media (max-width: 1000px) { 
+@media (max-width: 1060px) { 
   .container {
     display: grid; /* Use grid layout */
     grid-template-columns: 1fr 1fr; /* Two columns */
@@ -42,4 +42,12 @@ body {
     max-width: 100%; /* Ensure cards take full width of grid column */
     margin: 0; /* Remove margin to fit grid layout */
   }
+}
+
+@media (max-width: 580px) { 
+.container {
+  display: flex;
+  flex-direction: column; 
+  gap: 5px; 
+}
 }

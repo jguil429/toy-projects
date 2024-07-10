@@ -54,12 +54,12 @@ function RandomTrivia() {
         <div className={ styles.container }>
             <div className={ styles.content }>
                 <Button onClick={generateQuestion} className={ styles.triviaButton } buttonText="Riddle Me This..."/>
-                <div className={styles.questionContainer}>
+                <div className={`${styles.questionContainer} ${ styles.result}`}>
                     {error ? <p>{error}</p> : <p dangerouslySetInnerHTML={{ __html: question }} />}
                     {options.length > 0 && (
-                        <div>
+                        <div className={styles.optionsContainer}>
                             {options.map((option, index) => (
-                                <div key={index}>
+                                <div key={index} className={styles.option}>
                                     <input
                                         type="radio"
                                         id={`option-${index}`}
