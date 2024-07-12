@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import Header from './Header/Header';
 import DigitalClock from "./DigitalClock/DigitalClock";
 import ToDoList from "./ToDoList/ToDoList";
 import RandomTrivia from "./RandomTrivia/RandomTrivia";
@@ -7,10 +8,12 @@ import Card from "./Card/Card";
 import './App.css';
 import ColorPalette from './ColorPicker/ColorPalette';
 
+function Layout() {
+  const location = useLocation();
 
-function App() {
   return (
-    <BrowserRouter>
+    <>
+      {location.pathname === '/' ? <Header /> : ''}
       <Routes>
         <Route path="/clock" element={<DigitalClock />} />
         <Route path="/list" element={<ToDoList />} />
@@ -45,8 +48,17 @@ function App() {
           </div>
         } />
       </Routes>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Layout />
     </BrowserRouter>
   );
 }
 
 export default App;
+

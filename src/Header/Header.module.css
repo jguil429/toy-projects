@@ -1,0 +1,22 @@
+h1 {
+    font-size: 5rem;
+    text-align: center;
+    margin: 10px;
+    padding-top: 10px;
+}
+
+@media (max-width: 1194px) {
+    h1 {
+        font-size: 3rem;
+        padding: 0 0 40px 0;
+    }
+    
+}
+
+@media (max-width: 680px) {
+    h1 {
+        margin: 10px;
+        padding: 10px;
+
+    }
+}
