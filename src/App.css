@@ -10,7 +10,7 @@ html, body, #root {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  height: 55%;
+  height: 100%;
 }
 
 @media (max-width: 1194px) {
@@ -21,10 +21,6 @@ html, body, #root {
     justify-content: center;
     align-content: center;
     place-items: center;
-    height: 70%;
-    margin-top: 20px;
-
-    /* margin-top: 10px; */
   }
 
   .container :nth-child(1),
@@ -42,7 +38,7 @@ html, body, #root {
   .container {
     grid-template-columns: none;
     align-content: flex-start;
-    padding: 0;
+    padding: 20px 0;
     height: fit-content;
   }
 }

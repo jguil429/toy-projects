@@ -82,7 +82,9 @@ function RandomTrivia() {
                                 ))}
                             </div>
                         )}
-                        { result && <p>{ result }</p> }
+                         <div className={styles.result}>
+                            <p>{ result ?? '' }</p>
+                        </div>
                     </div>
                 )}
             </div>
